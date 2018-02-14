@@ -9,11 +9,31 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <ul>
-        <li><%= msg %></li>
-      </ul>
-    <% end %>
-    <%= yield %>
+    <div id="wrapper">
+      <div id="branding">
+        <h1>
+          Alpha Blog
+        </h1>
+      </div>
+      
+      <div id="nav_bar">
+        <%= link_to 'Home', root_path %> <%= link_to 'About Us', aboutus_path %> <%= link_to 'Articles', articles_path %>
+      </div>
+      <div id="content">
+        <% flash.each do |name, msg| %>
+          <ul>
+            <li><%= msg %></li>
+          </ul>
+        <% end %>
+        
+        <%= yield %>
+      </div>
+      <div id="footer">
+        
+      </div>
+    </div>
+    <div id="after_footer">
+      &copy; 2018 Design by David Fountain
+    </div>
   </body>
 </html>
