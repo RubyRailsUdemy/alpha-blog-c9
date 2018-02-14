@@ -38,11 +38,27 @@ body {
   background-color: #e8e3dc;
 }
 
+/* Nav Bar */
 #nav_bar{
+  width: 64em;
   background-color: #5e0205;
-  padding: 10px 0 10px 0;
+  padding: 10px 10px 27px 10px;
   border-top: 1px solid #111111;
   border-bottom: 1px solid #111111;
+  border-right: 1px #000 solid;
+}
+
+#nav_bar #centeringdiv {
+	margin: auto;
+	text-align:center;
+}
+
+#nav_bar ul {
+	list-style: none;
+}
+
+#nav_bar li {
+	float:left;
 }
 
 #nav_bar a, a:link, a:active, a:visited{
@@ -51,11 +67,35 @@ body {
   text-decoration: none;
 }
 
-#nav_bar a:hover{
+#nav_bar a:hover,
+.dropdown-content a:hover {
   padding: 10px 10px 11px 10px;
   color: #ffffff;
   background-color: #616061;
 }
+
+.dropdown-content {
+  margin-top: 10px;
+  display: none;
+  position: absolute;
+  background-color: #aaaaaa;
+  color: #FFFFFF;
+  border: 1px solid #111111;
+  z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+#dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* End Nav Bar */
 
 #content {
   margin: 15px 0 0 0;
@@ -66,6 +106,16 @@ body {
 	border-top: 1px #000 solid;
 	border-bottom: 1px #000 solid;
 	overflow: hidden;
+}
+
+#content a, a:link, a:active, a:visited{
+  color: #5e0205;
+  text-decoration: none;
+}
+
+#content a:hover {
+  color: #5e0205;
+  text-decoration: underline;
 }
 
 .sectionheader {
@@ -140,4 +190,27 @@ textarea.form_control {
 	font-family: Tahoma, sans-serif;
   resize: none;
   border: 2px solid #5e0205;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  padding: 10px;
+  border-top: 1px solid #F3F7FE;
+  border-right: 1px solid #5e0205;
+  border-bottom: 1px solid #5e0205;
+  border-left: 1px solid #F3F7FE;
+  border-radius: 8px;
+}
+
+.button:hover {
+  background-color: #5e0205;
+  color: #ffffff !important;
+  cursor: pointer;
+  border-top: 1px solid #111111;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #111111;
+  border-left: 1px solid #cccccc;
+  border-radius: 8px;
 }

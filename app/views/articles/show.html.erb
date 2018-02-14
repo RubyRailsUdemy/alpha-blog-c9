@@ -9,4 +9,7 @@
     Description: <br />
     <%= @article.description %>
   </p>
+  <p>
+    <%= link_to "Back", articles_path, class: 'button' %> &nbsp; <%= link_to "Edit", edit_article_path(@article), class: 'button' %>
+  </p>
 </div>

@@ -19,7 +19,7 @@
       <%= f.text_area :description, class: 'form_control', placeholder: 'Enter text....', rows: 20 %>
     </p>
     <p>
-      <%= f.submit %>
+     <%= link_to "Back", articles_path, class: 'button' %> &nbsp; <%= f.submit 'Create Post', :class => 'button' %>
     </p>
   <% end %>
 </div>

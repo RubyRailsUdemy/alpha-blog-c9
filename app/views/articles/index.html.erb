@@ -1,6 +1,22 @@
 <h3 class="sectionheader">Articles</h3>
 <div id="maincolumn">
   <p>
-    Future home of all articles.
+    <%= link_to "Create new Article", new_article_path, class: 'button' %>
+  </p>
+  <p>
+    Click the title to view the whole article.
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+      <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title , article_path(article) %></td>
+        <td><%= article.description %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      </tr>
+      <% end %>
+    </table>
   </p>
 </div>

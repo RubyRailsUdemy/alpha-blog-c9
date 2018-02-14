@@ -19,7 +19,7 @@
       <%= f.text_area :description, class: 'form_control', rows: 20 %>
     </p>
     <p>
-      <%= f.submit %>
+      <%= link_to "Back", article_path(@article), class: 'button' %> &nbsp; <%= f.submit 'Edit Post', :class => 'button' %>
     </p>
   <% end %>
 </div>
