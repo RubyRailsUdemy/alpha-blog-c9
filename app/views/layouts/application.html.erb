@@ -10,28 +10,9 @@
 
   <body>
     <div id="wrapper">
-      <div id="branding">
-        <h1>
-          Alpha Blog
-        </h1>
-      </div>
-      
-      <div id="nav_bar">
-        <div id="centeringdiv">
-          <ul>
-            <li><%= link_to 'Home', root_path %></li>
-            <li><%= link_to 'About Us', aboutus_path %></li>
-            <li>
-              <div id="dropdown">
-                <%= link_to 'Articles', articles_path, class: 'dropbtn' %>
-                <div class="dropdown-content">
-                  <%= link_to "New Article", new_article_path %>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/navbar' %>
+     
       <div id="content">
         <%= yield %>
       </div>
@@ -39,8 +20,6 @@
         
       </div>
     </div>
-    <div id="after_footer">
-      &copy; 2018 Design by David Fountain
-    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

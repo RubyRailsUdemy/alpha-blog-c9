@@ -47,6 +47,14 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
   
+  # Method to destroy an article with a confirmation.
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    flash[:notice] = "Delete Successful"
+    redirect_to articles_path
+  end
+  
   # Private method to whitelist article creation.
   private
   def article_params

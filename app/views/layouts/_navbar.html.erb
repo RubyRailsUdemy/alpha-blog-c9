@@ -1,0 +1,16 @@
+<div id="nav_bar">
+  <div id="centeringdiv">
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'About Us', aboutus_path %></li>
+      <li>
+        <div id="dropdown">
+          <%= link_to 'Articles', articles_path, class: 'dropbtn' %>
+          <div class="dropdown-content">
+            <%= link_to "New Article", new_article_path %>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
