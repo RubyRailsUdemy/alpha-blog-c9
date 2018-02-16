@@ -9,16 +9,9 @@
   </head>
 
   <body>
-    <div id="wrapper">
-      <%= render 'layouts/header' %>
-      <%= render 'layouts/navbar' %>
-     
-      <div id="content">
-        <%= yield %>
-      </div>
-      <div id="footer">
-        
-      </div>
+    <%= render 'layouts/navbar' %>
+    <div class="container">
+      <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
   </body>
