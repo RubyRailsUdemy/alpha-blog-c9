@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Creation Successful!"
+      flash[:success] = "Article Created Successfully!"
       redirect_to article_path(@article)
     else
       render :new
@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
   # Method used to edit the article in the database and check validation.
   def update
     if @article.update(article_params)
-      flash[:notice] = "Edit Successful!"
+      flash[:success] = "Article Edited Successfully!"
       redirect_to article_path(@article)
     else
       render :edit
@@ -48,7 +48,7 @@ class ArticlesController < ApplicationController
   # Method to destroy an article with a confirmation.
   def destroy
     @article.destroy
-    flash[:notice] = "Delete Successful"
+    flash[:danger] = "Article Deleted Successfully!"
     redirect_to articles_path
   end
   

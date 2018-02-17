@@ -1,15 +1,12 @@
-<h3 class="sectionheader">
+<h3>
   Articles >> View >> Title: <%= @article.title %>
-  <% flash.each do |name, msg| %>
-    (<%= msg %>)
-  <% end %>
 </h3>
-<div id="maincolumn">
-  <p>
-    Description: <br />
-    <%= @article.description %>
-  </p>
-  <p>
-    <%= link_to "Back", articles_path, class: 'button' %> &nbsp; <%= link_to "Edit", edit_article_path(@article), class: 'button' %>
-  </p>
-</div>
+
+<%= render 'layouts/messages' %>
+
+<p>
+  Description: <%= @article.description %>
+</p>
+<p>
+  <%= link_to "Back", articles_path, class: 'button' %> &nbsp; <%= link_to "Edit", edit_article_path(@article), class: 'button' %>
+</p>
