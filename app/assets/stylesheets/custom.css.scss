@@ -3,6 +3,23 @@ $navbar-default-bg: #0f1d04;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar-default .navbar-nav li a{
+  color: #cccccc;
+}
+
+.navbar-default .navbar-nav li a:hover{
+  color: #ffffff;
+  background-color: #081301;
+}
+
+.dropdown-menu li a {
+  color: #000000 !important;
+}
+
+.dropdown-menu li a:hover {
+  color: #ffffff !important;
+}
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -15,10 +32,6 @@ $navbar-default-bg: #0f1d04;
 #logo:hover {
   text-decoration: none;
   cursor: pointer;
-}
-
-a.nav {
-  color: #ffffff;
 }
 
 img.branding {

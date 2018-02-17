@@ -1,25 +1,4 @@
-<h3 class="sectionheader">Articles >> Create New</h3>
-<div id="maincolumn">
-  <% if @article.errors.any? %>
-  <p class="error">Error: Fix the errors below before submitting.</p>
-  <ul class="error">
-    <% @article.errors.full_messages.each do |msg|%>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-  <% end %>
-  
-  <%= form_for @article do |f| %>
-    <p>
-      <%= f.label :title, class: 'form_label' %>  <br /> 
-      <%= f.text_field :title, class: 'form_control', placeholder: 'Enter a title...' %>
-    </p>
-    <p>
-      <%= f.label :description, class: 'form_label' %> <br /> 
-      <%= f.text_area :description, class: 'form_control', placeholder: 'Enter text....', rows: 20 %>
-    </p>
-    <p>
-     <%= link_to "Back", articles_path, class: 'button' %> &nbsp; <%= f.submit 'Create Post', :class => 'button' %>
-    </p>
-  <% end %>
+<h2 align="center">Articles >> Create New</h2>
+<div class="container">
+  <%= render 'form' %>
 </div>
