@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
   # Method used to create the new article in the database and check validation.
   def create
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       flash[:success] = "Article Created Successfully!"
       redirect_to article_path(@article)
