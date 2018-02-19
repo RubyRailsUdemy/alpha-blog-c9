@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   # Action to get article ID
   before_action :find_article, only: [:edit, :update, :show, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   
   # Main view shows all articles.
   def index
@@ -21,7 +23,7 @@ class ArticlesController < ApplicationController
   # Method used to create the new article in the database and check validation.
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     if @article.save
       flash[:success] = "Article Created Successfully!"
       redirect_to article_path(@article)
@@ -61,4 +63,11 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :description)
     end
+    
+  def require_same_user
+    if current_user != @article.user
+      flash[:danger] = "You can only modify your own articles"
+      redirect_to root_path
+    end
+  end
 end
