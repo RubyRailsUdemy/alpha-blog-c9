@@ -152,6 +152,23 @@ img.branding {
   padding-left: 0;
 }
 
+.badge {
+  background-color: #eaeaea;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  margin-right: 3px;
+  margin-bottom: 3px;
+}
+
+.badge a {
+  color: #999999;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
+
 #footer {
   margin-top: 45px;
   padding-top: 5px;
